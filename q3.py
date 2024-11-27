@@ -1,0 +1,1 @@
+# Write a Python program to print all numbers between two user-provided integers, skipping numbers divisible by 7.
