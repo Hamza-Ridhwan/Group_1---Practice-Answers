@@ -41,5 +41,6 @@ def sim_toolkit():
         else:
             # Handle invalid choices in the main menu.
             print("Invalid choice. Try again.")
-    sim_toolkit()
+
+sim_toolkit()
 
