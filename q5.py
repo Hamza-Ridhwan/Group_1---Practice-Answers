@@ -1,53 +1,45 @@
-# Question 5
-# Create a Command-Line Interface (CLI) project in Python that mimics Safaricom's SIM Toolkit. When you run the program, it should display menus dynamically based on user input. The program should handle user choices and navigate through different options just like the Safaricom SIM Toolkit.
+def sim_toolkit():
+    while True:
+        print("\n SIM 1")
+        print("1. Safaricom")
+        print("2. M_PESA")
+        print("0. Exit")
+        choice = input("Enter your choice: ")
 
-# Requirements:
-# Main Menu: When the program starts, display the following options:
-# SIM 1
-# 1. Safaricom
-# 2. M-PESA
-# Enter your choice: ________
+        if choice == "1":
+            print("You selected Safaricom.")
+        elif choice == "2":
+            # Display the mpesa sub-menu
+            while True:
+                print("\n SIM 1 - M_PESA")
+                print("1. Send Money")
+                print("2. Withdraw Cash")
+                print("3. Buy Airtime")
+                print("4. Loans and Savings")
+                print("5. Lipa na M_PESA")
+                print("6. My Account")
+                print("0. Back")
+                mpesa_choice = input("Enter your choice: ")
 
-# Submenu for M-PESA: If the user selects option 1 (M-PESA), show the following menu:
-# SIM 1
-# 1. Send Money
-# 2. Withdraw Cash
-# 3. Buy Airtime
-# 4. Loans and Savings
-# 5. Lipa na M-PESA
-# 6. My Account
-# Enter your choice: ________
+                if mpesa_choice == "1":
+                    while True:
+                        # User enters the phone number.
+                        phone = input("Enter Phone Number (10-13 digits): ")
+                        if phone.isdigit() and 10 <= len(phone) <= 13:
+                            print(f"Phone number {phone} validated.")
+                            break
+                        else:
+                            print("Invalid phone number. Try again.")
+                    break
+                elif mpesa_choice == "0":
+                    break
+                else:
+                    print("Invalid choice. Try again.")
+        elif choice == "0":
+            print("Exiting SIM Toolkit. Goodbye!")
+            break
+        else:
+            # Handle invalid choices in the main menu.
+            print("Invalid choice. Try again.")
+    sim_toolkit()
 
-# Submenu for "Send Money": If the user selects option 1 (Send Money), display:
-# Enter Phone Number: 
-# (Digits 0-9, *, #, +) 
-# 10-13 characters: 
-# ________________
-# After each action, the program should handle input validation and navigate back to the appropriate menu or exit the program if the user wishes.
-# Example Interaction:
-# - User runs the program this displays in the terminal :
-# SIM 1
-# 1. Safaricom
-# 2. M-PESA
-# Enter your choice: 2
-
-# - Next screen appears:
-# SIM 1
-# 1. Send Money
-# 2. Withdraw Cash
-# 3. Buy Airtime
-# 4. Loans and Savings
-# 5. Lipa na M-PESA
-# 6. My Account
-# Enter your choice: 1
-
-# - Next screen appears:
-# Enter Phone Number:
-# (Digits 0-9, *, #, +)
-# 10-13 characters: ________
-
-# Validate inputs where necessary (e.g., valid phone numbers, numeric entries for options).
-# Allow users to navigate back to previous menus or exit the program.
-# HINT
-# You use several functions, if else statements etc
-# Getting user inputs in terminal i.e using  input("Enter your calculation: ")
